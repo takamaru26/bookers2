@@ -1,2 +1,11 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+  <h2>User info</h2>
+    <%= form_with model: @user, url: user_path, method: :PATCH do |f| %>
+                
+    <label for="inputName">Name</label><br>
+    <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%><br>
+    <label for="inputImage">Image</label><br>
+    <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %><br>
+    <%= f.label :Introduction %><br>
+    <%= f.text_area :introduction %><br>
+    <%= f.submit 'Uodate User' %>
+  <% end %>
