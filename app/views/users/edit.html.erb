@@ -1,6 +1,16 @@
   <h2>User info</h2>
+
+  <% if @user.errors.any? %>
+  <%= @user.errors.count %> error prohibited this obj from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
+<% end %>
     <%= form_with model: @user, url: user_path, method: :PATCH do |f| %>
-                
+
     <label for="inputName">Name</label><br>
     <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%><br>
     <label for="inputImage">Image</label><br>
