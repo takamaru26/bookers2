@@ -28,37 +28,45 @@
     <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to "Home", user_path(current_user.id), class: 'nav-link txte-light' %>
+        <i class="fas fa-home" aria-hidden="true"></i>
       </li>
       <li class="nav-item">
         <%= link_to "Users", users_path, class: 'nav-link txte-light' %>
+        <i class="fas fa-users" aria-hidden="true"></i>
       </li>
       <li class="nav-item">
         <%= link_to "Books", books_path, class: 'nav-link text-light' %>
+        <i class="fas fa-book-open" aria-hidden="true"></i>
       </li>
       <li class="nav-item">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+        <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
         </li>
     <% else %>
       <li class="nav-item">
         <%= link_to "Home", root_path, class: 'nav-link text-light' %>
+        <i class="fas fa-home" aria-hidden="true"></i>
       </li>
       <li class="nav-item">
         <%= link_to "About", about_path, class: 'nav-link text-light' %>
+        <i class="fas fa-link" aria-hidden="true"></i>
       </li>
       <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path, class: 'nav-link text-light' %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light' %>
+        <i class="fas fa-user-plus" aria-hidden="true"></i>
       </li>
       <li class="nav-item">
         <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light' %>
+        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
       </li>
     <% end %>
   </header>
-  
-<%= flash[:notice] %>
 
-<main>
+  <main>
+    <%= flash[:notice] %>
     <%= yield %>
-    <footer>
+  </main>
+  <footer>
       <div class="container mt-5">
         <div class="row">
           <div class="mx-auto">
@@ -66,6 +74,6 @@
           </div>
         </div>
       </div>
-    </footer>
+  </footer>
   </body>
 </html>

@@ -13,14 +13,13 @@
           </ul>
         <% end %>
         <%= form_with model: @book do |f| %>
-
           <label for="inputTitle">Title</label><br>
           <%= f.text_field :title %><br>
           <%= f.label :Opinion %><br>
           <%= f.text_area :body %><br>
           <%= f.submit 'Update Book' %>
         <% end %>
-        <%= link_to "show", book_path(@book.id)%>
+        <%= link_to "Show", book_path(@book.id)%>
         |
         <%= link_to "Back", books_path %>
       </div>

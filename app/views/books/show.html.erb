@@ -2,7 +2,7 @@
   <div class="container px-5 px-sm-0">
     <div class="row">
 
-<%= render 'list', books: @books %>
+<%= render 'list', user: @user, book: @books %>
 
   <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
@@ -19,7 +19,7 @@
           <td><%= @book.body %></td>
           <% if @book.user == current_user %>
           <td><%= link_to "Edit", edit_book_path(@book.id), class:"btn-sm btn-success" %></td>
-          <td><%= link_to "destroy", book_path(@book.id), class:"btn-sm btn-danger destroy(@book.id)", method: :delete,data: {confirm: "本当に削除しますか？"}  %></td>
+          <td><%= link_to "Destroy", book_path(@book.id), class:"btn-sm btn-danger destroy(@book.id)", method: :delete,data: {confirm: "本当に削除しますか？"}  %></td>
           <% end %>
         </tr>
       </tbody>
