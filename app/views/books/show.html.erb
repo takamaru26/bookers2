@@ -19,7 +19,7 @@
           <td><%= @book.body %></td>
           <% if @book.user == current_user %>
           <td><%= link_to "Edit", edit_book_path(@book.id), class:"btn-sm btn-success" %></td>
-          <td><%= link_to "Destroy", book_path(@book.id), class:"btn-sm btn-danger destroy(@book.id)", method: :delete,data: {confirm: "本当に削除しますか？"}  %></td>
+          <td><%= link_to "Destroy", book_path(@book.id), method: :delete,data: {confirm: "本当に削除しますか？"}, class:"btn-sm btn-danger destroy(@book.id)"  %></td>
           <% end %>
         </tr>
       </tbody>
